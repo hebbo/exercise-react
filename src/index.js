@@ -11,11 +11,11 @@ function Square(props: { onClick: () => void, value: ?"X" | "O" }) {
   );
 }
 
-class Board extends React.Component<
-  {},
-  { squares: Array<?"X" | "O">, xIsNext: boolean }
-> {
-  constructor(props) {
+type BoardProps = {};
+type BoardState = { squares: Array<?"X" | "O">, xIsNext: boolean };
+
+class Board extends React.Component<BoardProps, BoardState> {
+  constructor(props: BoardProps) {
     super(props);
     this.state = {
       squares: Array(9).fill(null),
